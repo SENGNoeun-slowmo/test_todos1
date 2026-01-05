@@ -195,7 +195,7 @@ function App() {
   return (
     <div className="max-w-4xl mx-auto mt-10 p-8 bg-white rounded-lg shadow-lg">
       <div className="flex justify-between items-center mb-8">
-        <h1 className="text-3xl font-bold">My Todos</h1>
+        <h1 className="text-3xl font-bold">My Freind</h1>
         <button onClick={signOut} className="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded transition">Sign Out</button>
       </div>
 
@@ -246,18 +246,13 @@ function App() {
 
       {/* Todo List */}
       {todos.length === 0 ? (
-        <p className="text-center text-gray-500 text-xl py-10">No todos yet! Add one above 👆</p>
+        <p className="text-center text-gray-500 text-xl py-10">No list yet! Add one above 👆</p>
       ) : (
         <ul className="space-y-6">
           {todos.map((todo) => (
             <li key={todo.id} className="flex flex-col gap-4 p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition">
               <div className="flex items-start gap-4">
-                <input
-                  type="checkbox"
-                  checked={todo.is_complete}
-                  onChange={() => toggleTodo(todo.id, todo.is_complete)}
-                  className="mt-1 w-6 h-6 text-green-600 rounded focus:ring-green-500"
-                />
+             <label htmlFor="" className='text-black'>Name:</label>
                 <span className={`flex-1 text-lg ${todo.is_complete ? 'line-through text-gray-500' : 'text-gray-800'}`}>
                   {todo.task}
                 </span>
